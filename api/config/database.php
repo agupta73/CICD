@@ -2,10 +2,10 @@
 
 class Database {
 
-    private $host = "localhost";
-    private $db_name = "KDMS";
+    private $host = "localhost:3309";
+    private $db_name = "kdms";
     private $username = "root";
-    private $password = "";
+    private $password = "password";
     public $conn;
 
     // get the database connection
