@@ -2,7 +2,7 @@
 
 class Database {
 
-    private $host = "localhost:3309";
+    private $host = "192.168.60.13:3309";
     private $db_name = "kdms";
     private $username = "root";
     private $password = "password";

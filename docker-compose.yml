@@ -54,4 +54,17 @@ services:
          target: /var/lib/mysql
     hostname: cicd_db
     restart: always
- 
+
+  cicdadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - "8070:80"
+    networks:
+      custom:
+        ipv4_address: 192.168.60.14
+    dns: 8.8.8.8
+    container_name: mycicdadmin
+    hostname: cicd_admin
+    restart: always
+    
+
