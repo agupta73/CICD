@@ -558,10 +558,11 @@ class clsOptions {
             FROM `Amenity_Master` am 
             LEFT OUTER JOIN Amenities_Availability aa 
             ON am.amenity_key = aa.amenity_key 
-            WHERE am.amenity_key = '" . $amenityKey . "'";
+            WHERE am.amenity_key = '" . $amenityKey . "' ;";
         
         //var_dump($query);
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        //$results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $AmenityDetail = array();
         

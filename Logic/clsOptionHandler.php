@@ -103,6 +103,9 @@ class clsOptionHandler {
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
+ 
+        //var_dump($this->url); die;
+        
         if ($optionType != "RefreshAcco" && $optionType != "RefreshSeva") {
             $response = json_decode($response, true);
         }

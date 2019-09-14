@@ -77,9 +77,10 @@
     
     var formData = $(formId).serialize();
     //alert(formData);
+    //alert(<?=$config_data['localroot']?>Logic/requestManager.php);
     if(validateInput()){ 
          $.ajax({
-          url:'<?=$config_data['webroot']?>Logic/requestManager.php',
+          url:'<?=$config_data['localroot']?>Logic/requestManager.php',
           type:'POST',
           data:formData,
           success:function(response){
@@ -88,7 +89,7 @@
                 //alert(response);
 		if(r['status'] == true){
                     alert("Amenity record updated successfully!");
-                   window.location.assign("<?=$config_data['webroot']?>UI/upsertAmenityI.php?amenity_key=" + r['info'] );
+                   window.location.assign("<?=$config_data['localroot']?>UI/upsertAmenityI.php?amenity_key=" + r['info'] );
                 }
 		else{
                     alert(r['message']);
@@ -197,7 +198,7 @@ function validateInput(){
                        <div class="col-md-6"></div>
                        <div class="col-md-6" >
                     <input type="hidden" name="requestType" id="requestType" value="upsertAmenity">
-                    <button type="reset" class="btn btn-success pull-right">Cancel</button>
+                    <button type="reset" class="btn btn-success pull-right">Reset</button>
                     <button class="btn btn-success pull-right" onclick="saveFormData('#myForm', 1); return false;" >Save</button>
                        </div>
                 </div>
