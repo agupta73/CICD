@@ -391,7 +391,8 @@ class clsOptions {
             ON am.accomodation_key = aa.accomodation_key";
         
         
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        //$results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $AccomodationDetail = array();
         $i = 0;
@@ -423,7 +424,8 @@ class clsOptions {
             " left outer join Seva_Availability sa on sm.seva_id = sa.Seva_Id ";
         
         
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        //$results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $Sevas = array();
         $i = 0;
@@ -441,8 +443,7 @@ class clsOptions {
         
         return $Sevas;
     }
-  
-    
+     
     private function getAmenities(){
 //        $res = array();
 //        $res['status'] = false;
@@ -496,7 +497,8 @@ class clsOptions {
             WHERE am.accomodation_key = '" . $accommodationKey . "'";
         
         
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        //$results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $AccomodationDetail = array();
         
@@ -527,7 +529,8 @@ class clsOptions {
             WHERE sm.seva_id = '" . $sevaKey . "'";
         
         
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        //$results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $SevaDetail = array();
         

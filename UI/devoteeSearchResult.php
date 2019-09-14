@@ -4,8 +4,8 @@
         <title> KDMS (Available Devotee Records) </title>
         <?php
         include_once("header.php");
-        include_once($_SERVER['DOCUMENT_ROOT'] . "/kdms/Logic/clsDevoteeSearch.php");
-        include_once($_SERVER['DOCUMENT_ROOT'] . "/kdms/Logic/clsOptionHandler.php");
+        include_once( "../Logic/clsDevoteeSearch.php");
+        include_once("../Logic/clsOptionHandler.php");
         // Include new config file in each page ,where we need data from configuration
         $config_data = include("../site_config.php");
         ?>
@@ -56,7 +56,7 @@
 
                     //if(confirm("Card printed successfully?")){
                     $.ajax({
-                        url: '<?=$config_data['webroot']?>Logic/requestManager.php',
+                        url: '<?=$config_data['localroot']?>Logic/requestManager.php',
                         type: 'POST',
                         data: {'devotee_key': printString.substr(0, printString.length - 1), 'requestType': "removeFromPrintQueue"},
                         async: false,
@@ -100,7 +100,7 @@
 
                     //if(confirm("Card printed successfully?")){
                     $.ajax({
-                        url: '<?=$config_data['webroot']?>Logic/requestManager.php',
+                        url: '<?=$config_data['localroot']?>Logic/requestManager.php',
                         type: 'POST',
                         data: {'devotee_key': printString.substr(0, printString.length - 1), 'requestType': "removeFromPrintQueue"},
                         async: false,

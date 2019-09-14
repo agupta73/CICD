@@ -55,7 +55,7 @@
     //alert(formData);
     if(validateInput()){ 
          $.ajax({
-          url:'<?=$config_data['webroot']?>Logic/requestManager.php',
+          url:'<?=$config_data['localroot']?>Logic/requestManager.php',
           type:'POST',
           data:formData,
           success:function(response){
@@ -64,7 +64,7 @@
                 
 		if(r['status'] == true){
                     alert("Seva record updated successfully!");
-                   window.location.assign("<?=$config_data['webroot']?>UI/addSevaI.php?seva_id=" + r['info'] );
+                   window.location.assign("<?=$config_data['localroot']?>UI/addSevaI.php?seva_id=" + r['info'] );
                 }
 		else{
                     alert(r['message']);

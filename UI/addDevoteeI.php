@@ -171,7 +171,7 @@ $config_data=include_once("../site_config.php");
                 //alert(formData);
                 if (validateInput()) {
                     $.ajax({
-                        url: '<?=$config_data['webroot'];?>Logic/requestManager.php',
+                        url: '<?=$config_data['localroot'];?>Logic/requestManager.php',
                         type: 'POST',
                         data: formData,
                         async: false,
@@ -192,13 +192,13 @@ $config_data=include_once("../site_config.php");
                     //Save and stay on the record
                     if (flag == 1 && updateSuccess) {
                         alert("Devotee record updated successfully!");
-                        window.location.assign("<?=$config_data['webroot'];?>UI/addDevoteeI.php?devotee_key=" + r['info']);
+                        window.location.assign("<?=$config_data['localroot'];?>UI/addDevoteeI.php?devotee_key=" + r['info']);
                     }
                     //save and Print
                     if (flag == -1 && updateSuccess) {
 
                         $.ajax({
-                            url: '<?=$config_data['webroot'];?>Logic/requestManager.php',
+                            url: '<?=$config_data['localroot'];?>Logic/requestManager.php',
                             type: 'POST',
                             data: {'devotee_key': document.getElementById("devotee_key").value, 'requestType': "addToPrintQueue"},
                             async: false,
@@ -208,7 +208,7 @@ $config_data=include_once("../site_config.php");
 
                                 if (r['flag'] == true) {
                                     alert("Devotee Record updated and card added to Print Queue!");
-                                    window.location.assign("<?=$config_data['webroot'];?>UI/devoteeSearchResult.php?mode=SET&key=CTP");
+                                    window.location.assign("<?=$config_data['localroot'];?>UI/devoteeSearchResult.php?mode=SET&key=CTP");
                                 } else {
                                     alert(r['message']);
                                     updateSuccess = false;
@@ -227,7 +227,7 @@ $config_data=include_once("../site_config.php");
                     //save and exit
                     if (flag == 0 && updateSuccess) {
                         alert("Devotee record updated successfully!");
-                        window.location.assign("<?=$config_data['webroot'];?>UI/index.php");
+                        window.location.assign("<?=$config_data['localroot'];?>UI/index.php");
                     }
                     /*
                      document.getElementById("myForm").action = "/KDMS/Logic/requestManager.php";

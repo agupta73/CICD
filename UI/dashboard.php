@@ -34,7 +34,7 @@ unset($sevaSearch);
             switch (flag) {
                 case 1: //Refresh count
                     $.ajax({
-                        url: "<?=$config_data['webroot'];?>Logic/requestManager.php",
+                        url: "<?=$config_data['localroot'];?>Logic/requestManager.php",
                         type: 'POST',
                         data: formData,
                         success: function (response) {
@@ -53,7 +53,7 @@ unset($sevaSearch);
                     formData = $(formId).serialize();
                     
                     $.ajax({
-                        url: "<?=$config_data['webroot'];?>Logic/requestManager.php",
+                        url: "<?=$config_data['localroot'];?>Logic/requestManager.php",
                         type: 'POST',
                         data: formData,
                         success: function (response) {
@@ -104,7 +104,7 @@ unset($sevaSearch);
 
                     //if(confirm("Card printed successfully?")){
 //                    $.ajax({
-//                        url: '<?=$config_data['webroot']?>Logic/requestManager.php',
+//                        url: '<?=$config_data['localroot']?>Logic/requestManager.php',
 //                        type: 'POST',
 //                        data: {'devotee_key': printString.substr(0, printString.length - 1), 'requestType': "removeFromPrintQueue"},
 //                        async: false,

@@ -81,7 +81,7 @@
     
     if(validateInput()){ 
          $.ajax({
-          url:'<?=$config_data['webroot']?>Logic/requestManager.php',
+          url:'<?=$config_data['localroot']?>Logic/requestManager.php',
           type:'POST',
           data:formData,
           success:function(response){
@@ -90,7 +90,7 @@
                 //alert(response);
 		if(r['status'] == true){
                     alert("Accommodation record updated successfully!");
-                   window.location.assign("<?=$config_data['webroot']?>UI/addAccommodationI.php?accommodation_key=" + r['info'] );
+                   window.location.assign("<?=$config_data['localroot']?>UI/addAccommodationI.php?accommodation_key=" + r['info'] );
                 }
 		else{
                     alert(r['message']);

@@ -93,7 +93,8 @@ Class Devotee {
                     "left outer join Devotee_Seva ds on d.Devotee_key=ds.Devotee_Key AND ds.seva_year = YEAR(NOW()) AND Seva_Status = 'Assigned'  " .
                  "where " .
                     " d.Devotee_Key = '" . $devotee_key . "' ORDER BY da.Devotee_Accomodation_update_Date_Time Desc LIMIT 1";
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        //$results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $DevoteeDetails = array();
         
@@ -184,7 +185,8 @@ Class Devotee {
         
         //var_dump($query);die;
                 
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        //$results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $devoteeSearchResult = array();
         $i = 0;
@@ -281,7 +283,7 @@ Class Devotee {
         
         //var_dump($query);die;
                 
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $devoteeSearchResult = array();
         $i = 0;
@@ -457,7 +459,7 @@ Class Devotee {
            
         //var_dump($query);die;
                 
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $devoteeSearchResult = array();
         $i = 0;
@@ -516,7 +518,7 @@ Class Devotee {
            
         //var_dump($query);die;
                 
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $devoteeSearchResult = array();
         $i = 0;
@@ -574,7 +576,7 @@ Class Devotee {
            
         //var_dump($query);die;
                 
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $devoteeSearchResult = array();
         $i = 0;
@@ -632,7 +634,7 @@ Class Devotee {
                     "`Amenity_Allocation_Date_Time` DESC" ;
         
            // var_dump($query);
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        $results = $this->conn->query($query);
         
         $devoteeAmenityResult = array();
         $i = 0;

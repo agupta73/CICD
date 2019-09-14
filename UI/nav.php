@@ -125,7 +125,7 @@ $config_data=include("../site_config.php");
           var reqType = "dynamicSearchDevotee";
       	$('#search-result-container').show();
       	$('#search-result-container').html('<div><img src="../assets/img/preloader.gif" width="50px;" height="50px"> <span style="font-size: 20px;">Please Wait...</span></div>');
-        $.post('<?=$config_data['webroot'];?>Logic/requestManager.php',{'key': val, 'requestType': reqType}, function(data){
+        $.post('<?=$config_data['localroot'];?>Logic/requestManager.php',{'key': val, 'requestType': reqType}, function(data){
       		if(data != ""){
       			$('#search-result-container').html(data);
                     // add some css to scroll/view all data
