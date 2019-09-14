@@ -455,22 +455,25 @@ class clsOptions {
             aa.Allocated_Count, aa.Reserved_Count, aa.Out_Of_Availability_Count
             FROM `Amenity_Master` am 
             LEFT OUTER JOIN Amenities_Availability aa 
-            ON am.amenity_key = aa.amenity_key";
+            ON am.amenity_key = aa.amenity_key; ";
         
         
-        $results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        //$results = $this->conn->query($query,MYSQLI_USE_RESULT);
+        
         
         $AmenityDetail = array();
         $i = 0;
-        while($row = $results->fetchObject()){
-            //var_dump($row);
+        //var_dump($this->conn); die;
+        foreach ($this->conn->query($query) as $row) {
+        //while($row = $results->fetchObject()){
+            
             $AmenityDetail[]=$row;
             $i = $i+1;
         }
         //var_dump($AccomodationDetail);
         if($i==0){
             $AmenityDetail['status'] = false;
-            $AmenityDetail['message'] = "Accomodation details not found!";
+            $AmenityDetail['message'] = "Amenity details not found!";
             $AmenityDetail['info'] = $results;
         }
         

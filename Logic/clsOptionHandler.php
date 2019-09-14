@@ -13,8 +13,8 @@
  */
 class clsOptionHandler {
 
-    private $url = "../api/loadOptions.php";
-    private $urlUpsert = "../api/upsertOption.php";
+    //private $url = "../api/loadOptions.php";
+    //private $urlUpsert = "../api/upsertOption.php";
     private $optionType = "";
     private $optionKey = "";
 

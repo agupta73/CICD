@@ -18,7 +18,7 @@
         include_once("nav.php");
         $amenitySearch = new clsOptionHandler("Amenity");    
         $response = $amenitySearch->getOptions();
-        //var_dump($response);
+        //var_dump($response); die;
         
         unset($amenitySearch);
       ?>

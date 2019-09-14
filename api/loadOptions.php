@@ -6,7 +6,7 @@
 
   $database = new Database();
   $db = $database->getConnection();
-
+  //var_dump($db); die;
   $options = new clsOptions($db);
   //$requestData = $_GET['option_type'];
   $requestData = $_GET;
