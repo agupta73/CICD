@@ -67,4 +67,14 @@ services:
     hostname: cicd_admin
     restart: always
     
-
+  php_ext:
+    image: nanasess/php7-ext-apache
+    ports:
+        - "8097:80"
+    networks:
+      custom:
+        ipv4_address: 192.168.60.15
+    dns: 8.8.8.8
+    container_name: mycicdext
+    hostname: cicd_ext
+    restart: always

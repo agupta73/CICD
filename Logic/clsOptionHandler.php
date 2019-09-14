@@ -13,8 +13,8 @@
  */
 class clsOptionHandler {
 
-    private $url = "http://localhost/KDMS/api/loadOptions.php";
-    private $urlUpsert = "http://localhost/KDMS/api/upsertOption.php";
+    private $url = "../api/loadOptions.php";
+    private $urlUpsert = "../api/upsertOption.php";
     private $optionType = "";
     private $optionKey = "";
 
