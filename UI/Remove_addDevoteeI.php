@@ -7,7 +7,7 @@ $config_data=include_once("../site_config.php");
 
     <head>
         <title>
-            KDMS (Add Devotee I)
+            CICD (Add User I)
         </title>
         <?php
         include_once("header.php");

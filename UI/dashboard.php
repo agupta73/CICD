@@ -1,27 +1,27 @@
 <?php
 include_once("header.php");
-include_once("../Logic/clsDevoteeSearch.php");
-include_once("../Logic/clsReportHandler.php");
+//include_once("../Logic/clsDevoteeSearch.php");
+//include_once("../Logic/clsReportHandler.php");
 include_once("../Logic/clsOptionHandler.php");
 // Include new config file in each page ,where we need data from configuration
 $config_data = include("../site_config.php");
 
-$getReport = new clsReportHandler();
-$response = $getReport->getAccommodationCounts();
-$accoType = "All";
+//$getReport = new clsReportHandler();
+//$response = $getReport->getAccommodationCounts();
+//$accoType = "All";
 
-if (!empty($_GET['accoType'])) {
-    $accoType = $_GET['accoType'];
-}
+//if (!empty($_GET['accoType'])) {
+//    $accoType = $_GET['accoType'];
+//}
+//
+//$AccoResponse = $getReport->getAccommodationRecords($accoType);
+//unset($getReport);
 
-$AccoResponse = $getReport->getAccommodationRecords($accoType);
-unset($getReport);
-
-$sevaSearch = new clsOptionHandler("Seva");    
-$sevaRes = $sevaSearch->getOptions();
-//var_dump($response); die;
-//array(5) { [0]=> array(3) { ["Seva_Id"]=> string(2) "AT" ["Seva_Description"]=> string(11) "A test Seva" ["assigned_count"]=> string(1) "0" } [1]=> array(3) { ["Seva_Id"]=> string(2) "KU" ["Seva_Description"]=> string(14) "Kitchen+Upper+" ["assigned_count"]=> string(1) "0" } [2]=> array(3) { ["Seva_Id"]=> string(2) "MP" ["Seva_Description"]=> string(12) "Mal+Pua+Seva" ["assigned_count"]=> string(1) "1" } [3]=> array(3) { ["Seva_Id"]=> string(2) "PV" ["Seva_Description"]=> string(19) "Prasaad+Vitran+Seva" ["assigned_count"]=> string(1) "0" } [4]=> array(3) { ["Seva_Id"]=> string(2) "UN" ["Seva_Description"]=> string(14) "-- Un Known --" ["assigned_count"]=> string(1) "4" } }
-unset($sevaSearch);
+//$sevaSearch = new clsOptionHandler("Seva");    
+//$sevaRes = $sevaSearch->getOptions();
+////var_dump($response); die;
+////array(5) { [0]=> array(3) { ["Seva_Id"]=> string(2) "AT" ["Seva_Description"]=> string(11) "A test Seva" ["assigned_count"]=> string(1) "0" } [1]=> array(3) { ["Seva_Id"]=> string(2) "KU" ["Seva_Description"]=> string(14) "Kitchen+Upper+" ["assigned_count"]=> string(1) "0" } [2]=> array(3) { ["Seva_Id"]=> string(2) "MP" ["Seva_Description"]=> string(12) "Mal+Pua+Seva" ["assigned_count"]=> string(1) "1" } [3]=> array(3) { ["Seva_Id"]=> string(2) "PV" ["Seva_Description"]=> string(19) "Prasaad+Vitran+Seva" ["assigned_count"]=> string(1) "0" } [4]=> array(3) { ["Seva_Id"]=> string(2) "UN" ["Seva_Description"]=> string(14) "-- Un Known --" ["assigned_count"]=> string(1) "4" } }
+//unset($sevaSearch);
 ?> 
 <script> //javascript function for ajax call 
     function clickHandler(formId, flag) {
@@ -149,7 +149,7 @@ unset($sevaSearch);
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">add</i>
-                            <a href="../UI/addDevoteeI.php"  class="dash-link">Add Devotee</a>
+                            <a href="../UI/addDevoteeI.php"  class="dash-link">Add User</a>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -167,24 +167,24 @@ unset($sevaSearch);
                             <i class="material-icons">edit</i>
                         </div>
                         <p class="card-category">Update</p>
-                        <h3 class="card-title">Devotee Update</h3>
+                        <h3 class="card-title">User Update</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">search</i>
-                            <a href="./devoteeSearchResult.php?mode=CUS&key=" class="dash-link">Search Devotee</a>
+                            <a href="./devoteeSearchResult.php?mode=CUS&key=" class="dash-link">Search User</a>
                         </div>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">edit</i>
-                            <a href="../UI/devoteeSearchResult.php?mode=CUS&key=" class="dash-link">Modify Devotee Record</a>
+                            <a href="../UI/devoteeSearchResult.php?mode=CUS&key=" class="dash-link">Modify User Record</a>
                         </div>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">print</i>
-                            <a href="./devoteeSearchResult.php?mode=SET&key=PWD" class="dash-link">Add Devotee Info to Photos/ID</a>
+                            <a href="./devoteeSearchResult.php?mode=SET&key=PWD" class="dash-link">Add User Info to Photos/ID</a>
                         </div>
                     </div>
                 </div>
@@ -203,7 +203,7 @@ unset($sevaSearch);
                         <div class="card-footer">
                             <div class="stats">
                                 <i class="material-icons text-danger">refresh</i>
-                                <a href="AddSevaII.php" class="dash-link">Manage Seva Types</a>
+                                <a href="AddSevaII.php" class="dash-link">Manage Service Types</a>
                             </div>
                         </div>
                         <div class="card-footer" >
@@ -261,26 +261,26 @@ unset($sevaSearch);
                             <i class="material-icons">people</i>
                         </div>
                         <p class="card-category">Statistics</p>
-                        <h3 class="card-title">Devotees</h3>
+                        <h3 class="card-title">Users</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">home</i>
-                            <a href="../UI/devoteeSearchResult.php?mode=CUS&key=" class="dash-link">Devotees Residing in Ashram:  
+                            <a href="../UI/devoteeSearchResult.php?mode=CUS&key=" class="dash-link">Users Residing:  
                                 <b>  <?php echo $response[0]['SpaceOccupiedOrDevoteesPresent']; ?> </b> </a>
                         </div>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">home</i>
-                            <a href="../UI/devoteeSearchResult.php?mode=CUS&key=" class="dash-link">Devotees Registered for Seva:  
+                            <a href="../UI/devoteeSearchResult.php?mode=CUS&key=" class="dash-link">Users Registered for Service:  
                                 <b>  <?php echo $response[1]['RegisteredDevoteesIncludingLocals']; ?> </b> </a>
                         </div> 
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">home</i>
-                            <a href="../UI/devoteeSearchResult.php?mode=CUS&key=devotee_accommodation_key=OWN" class="dash-link">Devotees with Own Arrangement:
+                            <a href="../UI/devoteeSearchResult.php?mode=CUS&key=devotee_accommodation_key=OWN" class="dash-link">User with Self Arrangement:
                                 <b>  <?php echo $response[4]['DevoteesWithOwnArrangements']; ?> </b> </a></div> 
                     </div>
                 </div>
@@ -305,13 +305,13 @@ unset($sevaSearch);
                         <div class="card-footer" onclick="clickHandler('#myFormID', 2); return false;">
                             <div class="stats">
                                 <i class="material-icons text-danger">refresh</i>
-                                <a href class="dash-link">Refresh Seva Counts</a>
+                                <a href class="dash-link">Refresh Service Counts</a>
                             </div>
                         </div>
                         <div class="card-footer" onclick="generateReport('#myFormID', 2); return false;">
                             <div class="stats">
                                 <i class="material-icons text-danger">home</i>
-                                <a href class="dash-link">Generate Mal Pua Report</a>
+                                <a href class="dash-link">Generate Food Service Report</a>
                             </div>
                         </div>
                     </div>             
@@ -451,7 +451,7 @@ unset($sevaSearch);
                     <div class="card">
                         <div class="card-header card-header-primary">
                             <h4 class="card-title">
-                                Seva Assignment Counts </h4>
+                                Service Assignment Counts </h4>
                         </div>
                         <div class="row">
                             <div class="card-body">
@@ -462,10 +462,10 @@ unset($sevaSearch);
                                             Seva ID
                                           </th>-->
                                         <th align='left'>
-                                            Seva
+                                            Service
                                         </th>
                                         <th align='left'>
-                                            Assigned Devotees 
+                                            Assigned User 
                                         </th>
 <!--                                        <th align='left'>
                                             Allocated 

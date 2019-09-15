@@ -1,4 +1,4 @@
-FROM php:7-apache
+FROM nanasess/php7-ext-apache
 
 MAINTAINER Anil Gupta <agupta.eai@gmail.com>
 

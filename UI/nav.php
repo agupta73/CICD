@@ -10,7 +10,7 @@ $config_data=include("../site_config.php");
 
   <div class="logo">
     <a href="#" class="simple-text logo-normal">
-      KDMS 
+      CICD Demo 
     </a>
   </div>
 
@@ -31,32 +31,32 @@ $config_data=include("../site_config.php");
        <li class="nav-item ">
         <a class="nav-link" href="./addDevoteeI.php">
           <i class="material-icons">person_add</i>
-          <p>Register New Devotee</p>
+          <p>Register New User</p>
         </a>
       </li>     
       <li class="nav-item ">
         <a class="nav-link" href="./devoteeSearchResult.php?mode=CUS&key=">
           <i class="material-icons">search</i>
-          <p>Search Devotees</p>
+          <p>Search User</p>
         </a>
       </li>
 
       <li class="nav-item ">
         <a class="nav-link" href="./devoteeSearchResult.php?mode=SET&key=PWD">
           <i class="material-icons">camera_front</i>
-          <p>Devotee Records with Photo</p>
+          <p>User Records with Photo</p>
         </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="./devoteeSearchResult.php?mode=SET&key=DWP">
           <i class="material-icons">camera_enhance</i>
-          <p>Devotee Records w/o Photo</p>
+          <p>User Records w/o Photo</p>
         </a>
       </li>     
       <li class="nav-item ">
         <a class="nav-link" href="./devoteeSearchResult.php?mode=SET&key=CTP">
           <i class="material-icons">print</i>
-          <p>Devotee Cards for Printing</p>
+          <p>User Cards for Printing</p>
         </a>
       </li>         
     </ul>

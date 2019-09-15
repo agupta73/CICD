@@ -3,7 +3,7 @@
 
 <head>
   <title>
-    KDMS (Add Amenity I)
+    CICD (Add Amenity I)
   </title>
   <?php
     $config_data=include_once("../site_config.php");
@@ -95,7 +95,8 @@
                     alert(r['message']);
                 }   
           }
-        });       
+        }); 
+        //alert('reaching here');
     }
   }
   

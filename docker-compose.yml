@@ -15,66 +15,48 @@ services:
   cicd:
     image: agupta73/cicd
     ports:
-       - "8095:80"
+       - "8011:80"
     networks:
       custom:
         ipv4_address: 192.168.60.11
     dns: 8.8.8.8
-    container_name: mycicd101
+    container_name: uicicd1
     hostname: cicd
     restart: always
     
   cicd2:
     image: agupta73/cicd
     ports:
-       - "8096:80"
+       - "8012:80"
     networks:
       custom:
         ipv4_address: 192.168.60.12
     dns: 8.8.8.8
-    container_name: mycicd102
+    container_name: uicicd2
     hostname: cicd
     restart: always
     
   cicd_db:
-    image: agupta73/cicd_database
+    image: agupta73/dbcicd
     ports:
-      - "3309:3306"
+      - "3305:3306"
     networks:
       custom:
         ipv4_address: 192.168.60.13
     dns: 8.8.8.8
-    container_name: mycicd_db101
+    container_name: dbcicd
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: kdms
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
     volumes:
        - type: bind
-         source: /Users/agupta/MySQL_Conf/my.cnf
+         source: ../CICD_DB/CICD_Conf/my.cnf
          target: /etc/my.cnf
        - type: bind
-         source: /Users/agupta/MySQL_Data
+         source: ../CICD_DB/CICD_Data
          target: /var/lib/mysql
-    hostname: cicd_db
     restart: always
 
-  cicdadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-        - "8070:80"
-    networks:
-      custom:
-        ipv4_address: 192.168.60.14
-    dns: 8.8.8.8
-    container_name: mycicdadmin
-    hostname: cicd_admin
-    restart: always
-    
-  php_ext:
-    image: nanasess/php7-ext-apache
-    ports:
-        - "8097:80"
-    networks:
-      custom:
-        ipv4_address: 192.168.60.15
-    dns: 8.8.8.8
-    container_name: mycicdext
-    hostname: cicd_ext
-    restart: always
