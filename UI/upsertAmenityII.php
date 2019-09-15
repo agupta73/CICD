@@ -3,7 +3,7 @@
 
 <head>
   <title>
-    KDMS (Add Accommodation II) 
+    CICD (Add Amenities) 
   </title>
   <?php
     include_once("header.php");

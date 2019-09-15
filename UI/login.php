@@ -18,7 +18,7 @@
                   <div class="col-md-4">
                 <div class="card">
                   <div class="card-header card-header-primary">
-                    <h4 class="card-title">KDMS LogIn </h4>
+                    <h4 class="card-title">CICD LogIn </h4>
                   </div>
                   <div class="card-body">
                       <form  id="myForm">
